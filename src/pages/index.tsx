@@ -33,19 +33,13 @@ const IndexPage: NextPage = () => {
   }, []);
 
   return (
-    <div>
-      <div>Design System</div>
-      <div>
-        <div>Tokens</div>
-        <div>
-          <Tokens tokens={tokens} onChange={handleTokensChange} />
-        </div>
+    <div className="flex flex-col gap-4 py-4">
+      <div className="px-4">
+        <Tokens tokens={tokens} onChange={handleTokensChange} />
       </div>
-      <div>
-        <div>Preview</div>
-        <div>
-          <Preview tokens={tokens} />
-        </div>
+      <div className="border-t-4 border-gray-300" />
+      <div className="px-4">
+        <Preview tokens={tokens} />
       </div>
     </div>
   );

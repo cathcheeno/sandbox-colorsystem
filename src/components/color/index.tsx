@@ -20,9 +20,13 @@ const Component: React.FC<Props> = ({ color, onChange }) => {
   }, [color, onChange]);
 
   return (
-    <div>
-      <Input label={color.name} hex={color.hex} onChange={handleInputChange} />
-      <Palette palette={color.palette} />
+    <div className="flex gap-2 items-center">
+      <div>
+        <Input label={color.name} hex={color.hex} onChange={handleInputChange} />
+      </div>
+      <div>
+        <Palette palette={color.palette} />
+      </div>
     </div>
   );
 };

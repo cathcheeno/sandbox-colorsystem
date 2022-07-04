@@ -1,6 +1,6 @@
 import Color from 'color';
 import { COLOR_NAME, TONE_LEVEL } from '../constants';
-import type { HEX, Tokens, ColorName, Palette, ToneLevel, Tone } from '../types';
+import type { HEX, Tokens, Color as ColorType, ColorName, Palette, ToneLevel, Tone } from '../types';
 
 export const createPalette = (hex: HEX): Palette => {
   const palette: Palette = {};
@@ -19,8 +19,13 @@ export const createTone = (hex: HEX, level: ToneLevel): Tone => {
   };
 };
 
-export const pickTone = (tokens: Tokens, colorName: ColorName, toneLevel: ToneLevel): Tone => {
+export const pickColor = (tokens: Tokens, colorName: ColorName): ColorType => {
   const color = tokens.colors.find((color) => (color.name === colorName));
+  return color;
+};
+
+export const pickTone = (tokens: Tokens, colorName: ColorName, toneLevel: ToneLevel): Tone => {
+  const color = pickColor(tokens, colorName);
   const tone = color.palette[toneLevel];
   return tone;
 };

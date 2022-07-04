@@ -5,7 +5,7 @@ export type Props = {
 };
 const Component: React.FC<Props> = ({ label }) => {
   return (
-    <button className="p-2 rounded bg-cs-primary text-cs-primary-on">{label}</button>
+    <button className="p-2 rounded bg-role-primary text-role-primary-on">{label}</button>
   );
 };
 export default Component;

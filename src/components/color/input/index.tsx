@@ -17,9 +17,9 @@ const Component: React.FC<Props> = ({ label, hex, onChange }) => {
   }, [onChange]);
 
   return (
-    <div>
-      <label htmlFor={id}>{label}</label>
-      <input id={id} type="color" value={hex} onChange={handleChange} />
+    <div className="flex gap-2 items-center justify-end w-[112px]">
+      <label className="text-xxs font-bold" htmlFor={id}>{label}</label>
+      <input className="" id={id} type="color" value={hex} onChange={handleChange} />
     </div>
   );
 };

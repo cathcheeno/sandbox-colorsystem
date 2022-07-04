@@ -14,18 +14,12 @@ const Component: React.FC<Props> = ({ tokens }) => {
   return (
     <>
       <style>{style}</style>
-      <div className="flex gap-2 p-2">
-        <div className="flex-1">
-          <div className="font-bold">Light Mode</div>
-          <div data-mode="light">
-            <Item />
-          </div>
+      <div className="flex gap-4">
+        <div className="flex-1" data-mode="light">
+          <Item label="Light Mode" />
         </div>
-        <div className="flex-1">
-          <div className="font-bold">Dark Mode</div>
-          <div data-mode="dark">
-            <Item />
-          </div>
+        <div className="flex-1" data-mode="dark">
+          <Item label="Dark Mode" />
         </div>
       </div>
     </>
@@ -34,21 +28,30 @@ const Component: React.FC<Props> = ({ tokens }) => {
 export default Component;
 
 type ItemProps = {
+  label: string;
 };
-const Item: React.FC<ItemProps> = () => {
+const Item: React.FC<ItemProps> = ({ label }) => {
   return (
-    <div className="p-4 flex flex-col gap-2 bg-cs-background">
-      <div className="text-cs-background-on-high">background-on-high</div>
-      <div className="text-cs-background-on-medium">background-on-medium</div>
-      <div className="text-cs-background-on-low">background-on-low</div>
-      <Button label="Button" />
-      {Object.values(ELEVATION_LEVEL).map((elevationLevel) => (
-        <React.Fragment key={elevationLevel}>
-          <Card elevationLevel={elevationLevel}>
-            <p>Card (elevation {elevationLevel})</p>
-          </Card>
-        </React.Fragment>
-      ))}
+    <div className="rounded border border-gray-500">
+      <div className="flex items-center gap-1 px-4 py-2 border-b border-gray-500">
+        <div className="w-2 h-2 rounded-full bg-gray-500" />
+        <div className="w-2 h-2 rounded-full bg-gray-500" />
+        <div className="w-2 h-2 rounded-full bg-gray-500" />
+        <div className="flex-1 text-center font-bold text-gray-500">{label}</div>
+      </div>
+      <div className="p-4 flex flex-col gap-2 bg-role-background">
+        <div className="text-role-background-on-high">background-on-high</div>
+        <div className="text-role-background-on-medium">background-on-medium</div>
+        <div className="text-role-background-on-low">background-on-low</div>
+        <Button label="Button" />
+        {Object.values(ELEVATION_LEVEL).map((elevationLevel) => (
+          <React.Fragment key={elevationLevel}>
+            <Card elevationLevel={elevationLevel}>
+              <p>Card (elevation {elevationLevel})</p>
+            </Card>
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 };
