@@ -4,51 +4,58 @@
 
 /* Design Token */
 :root {
+  --token-fontFamily-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --token-fontFamily-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --token-fontFamily-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   /* 実運用ではここにpaletteを列挙。プレビューではjsで自動生成する。 */
-  /* --token-palette-primary-0: #00000; */
-  --token-shadow-elv-0: 0 0 #000000;
-  --token-shadow-elv-1: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --token-shadow-elv-2: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --token-shadow-elv-3: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --token-shadow-elv-4: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --token-shadow-elv-5: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --token-overlayOpacity-elv-0: 0;
-  --token-overlayOpacity-elv-1: 0.05;
-  --token-overlayOpacity-elv-2: 0.08;
-  --token-overlayOpacity-elv-3: 0.11;
-  --token-overlayOpacity-elv-4: 0.12;
-  --token-overlayOpacity-elv-5: 0.14;
+  /* --token-color-accent-0: #00000; */
+  --token-shadow-0: 0 0 #000000;
+  --token-shadow-1: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --token-shadow-2: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --token-shadow-3: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --token-shadow-4: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --token-shadow-5: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --token-opacity-000: 0;
+  --token-opacity-005: 0.05;
+  --token-opacity-008: 0.08;
+  --token-opacity-011: 0.11;
+  --token-opacity-012: 0.12;
+  --token-opacity-014: 0.14;
+  --token-borderRadius-9999: 9999px;
 }
 
 /* Light/Dark Mode共通 */
 :root {
-  --ref-shadow-elv-0: var(--token-shadow-elv-0);
-  --ref-shadow-elv-1: var(--token-shadow-elv-1);
-  --ref-shadow-elv-2: var(--token-shadow-elv-2);
-  --ref-shadow-elv-3: var(--token-shadow-elv-3);
-  --ref-shadow-elv-4: var(--token-shadow-elv-4);
-  --ref-shadow-elv-5: var(--token-shadow-elv-5);
-  --ref-overlayOpacity-elv-0: var(--token-overlayOpacity-elv-0);
-  --ref-overlayOpacity-elv-1: var(--token-overlayOpacity-elv-1);
-  --ref-overlayOpacity-elv-2: var(--token-overlayOpacity-elv-2);
-  --ref-overlayOpacity-elv-3: var(--token-overlayOpacity-elv-3);
-  --ref-overlayOpacity-elv-4: var(--token-overlayOpacity-elv-4);
-  --ref-overlayOpacity-elv-5: var(--token-overlayOpacity-elv-5);
+  --role-fontFamily-general: var(--token-fontFamily-serif);
+  --role-shadow-elv-0: var(--token-shadow-0);
+  --role-shadow-elv-1: var(--token-shadow-1);
+  --role-shadow-elv-2: var(--token-shadow-2);
+  --role-shadow-elv-3: var(--token-shadow-3);
+  --role-shadow-elv-4: var(--token-shadow-4);
+  --role-shadow-elv-5: var(--token-shadow-5);
+  --role-opacity-elv-0: var(--token-opacity-000);
+  --role-opacity-elv-1: var(--token-opacity-005);
+  --role-opacity-elv-2: var(--token-opacity-008);
+  --role-opacity-elv-3: var(--token-opacity-011);
+  --role-opacity-elv-4: var(--token-opacity-012);
+  --role-opacity-elv-5: var(--token-opacity-014);
+  --role-color-shadow: var(--token-color-neutral-0);
+  --role-borderRadius-full: var(--token-borderRadius-9999);
 }
 
 /* Light Mode */
 /* :root {*/
 [data-mode=light] {
-  --ref-background: var(--token-palette-neutral-95);
-  --ref-background-on-high: var(--token-palette-neutral-10);
-  --ref-background-on-medium: var(--token-palette-neutral-30);
-  --ref-background-on-low: var(--token-palette-neutral-50);
-  --ref-surface: var(--token-palette-neutral-90);
-  --ref-surface-on-high: var(--token-palette-neutral-10);
-  --ref-surface-on-medium: var(--token-palette-neutral-30);
-  --ref-surface-on-low: var(--token-palette-neutral-50);
-  --ref-primary: var(--token-palette-primary-40);
-  --ref-primary-on: var(--token-palette-primary-10);
+  --role-color-background: var(--token-color-neutral-95);
+  --role-color-background-on-high: var(--token-color-neutral-10);
+  --role-color-background-on-medium: var(--token-color-neutral-30);
+  --role-color-background-on-low: var(--token-color-neutral-50);
+  --role-color-surface: var(--token-color-neutral-90);
+  --role-color-surface-on-high: var(--token-color-neutral-10);
+  --role-color-surface-on-medium: var(--token-color-neutral-30);
+  --role-color-surface-on-low: var(--token-color-neutral-50);
+  --role-color-accent: var(--token-color-accent-40);
+  --role-color-accent-on: var(--token-color-accent-10);
 }
 
 /* Dark Mode */
@@ -56,15 +63,15 @@
   :root {
 */
 [data-mode=dark] {
-  --ref-background: var(--token-palette-neutral-10);
-  --ref-background-on-high: var(--token-palette-neutral-90);
-  --ref-background-on-medium: var(--token-palette-neutral-70);
-  --ref-background-on-low: var(--token-palette-neutral-50);
-  --ref-surface: var(--token-palette-neutral-20);
-  --ref-surface-on-high: var(--token-palette-neutral-90);
-  --ref-surface-on-medium: var(--token-palette-neutral-70);
-  --ref-surface-on-low: var(--token-palette-neutral-50);
-  --ref-primary: var(--token-palette-primary-60);
-  --ref-primary-on: var(--token-palette-primary-10);
+  --role-color-background: var(--token-color-neutral-10);
+  --role-color-background-on-high: var(--token-color-neutral-90);
+  --role-color-background-on-medium: var(--token-color-neutral-70);
+  --role-color-background-on-low: var(--token-color-neutral-50);
+  --role-color-surface: var(--token-color-neutral-20);
+  --role-color-surface-on-high: var(--token-color-neutral-90);
+  --role-color-surface-on-medium: var(--token-color-neutral-70);
+  --role-color-surface-on-low: var(--token-color-neutral-50);
+  --role-color-accent: var(--token-color-accent-60);
+  --role-color-accent-on: var(--token-color-accent-10);
 }
 /*}*/

@@ -17,7 +17,7 @@ const Component: React.FC<Props> = ({ elevationLevel, children }) => {
       'shadow-role-elv-4': elevationLevel === ELEVATION_LEVEL['4'],
       'shadow-role-elv-5': elevationLevel === ELEVATION_LEVEL['5'],
     })}>
-      <div className={classnames('absolute inset-0 bg-role-primary', {
+      <div className={classnames('absolute inset-0 bg-role-accent', {
         'opacity-role-elv-0': elevationLevel === ELEVATION_LEVEL['0'],
         'opacity-role-elv-1': elevationLevel === ELEVATION_LEVEL['1'],
         'opacity-role-elv-2': elevationLevel === ELEVATION_LEVEL['2'],

@@ -11,7 +11,7 @@ const IndexPage: NextPage = () => {
   const [tokens, setTokens] = useState<TokensType>({
     colors: [
       {
-        name: COLOR_NAME.PRIMARY,
+        name: COLOR_NAME.ACCENT,
         hex: '#FFFF00',
         palette: createPalette('#FFFF00'),
       },

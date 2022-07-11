@@ -32,7 +32,7 @@ type ItemProps = {
 };
 const Item: React.FC<ItemProps> = ({ label }) => {
   return (
-    <div className="rounded border border-gray-500">
+    <div className="rounded border border-gray-500 font-role-general">
       <div className="flex items-center gap-1 px-4 py-2 border-b border-gray-500">
         <div className="w-2 h-2 rounded-full bg-gray-500" />
         <div className="w-2 h-2 rounded-full bg-gray-500" />
@@ -43,7 +43,8 @@ const Item: React.FC<ItemProps> = ({ label }) => {
         <div className="text-role-background-on-high">background-on-high</div>
         <div className="text-role-background-on-medium">background-on-medium</div>
         <div className="text-role-background-on-low">background-on-low</div>
-        <Button label="Button" />
+        <Button label="Enabled" />
+        <Button label="Disabled" isDisabled={true} />
         {Object.values(ELEVATION_LEVEL).map((elevationLevel) => (
           <React.Fragment key={elevationLevel}>
             <Card elevationLevel={elevationLevel}>

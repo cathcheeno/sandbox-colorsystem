@@ -1,5 +1,5 @@
 export const COLOR_NAME = {
-  'PRIMARY': 'primary',
+  'ACCENT': 'accent',
   'NEUTRAL': 'neutral',
   'ERROR': 'error',
 };
